@@ -4,6 +4,31 @@ using namespace std;
 
 using ll = long long;
 
+void checkIfTrapped(int row, int colum) {
+
+    for(int i = row; 1 < i; i--) {
+
+        for(int j = colum; 1 < j; j--) {
+
+            if((i+2 > row || j+1 > colum) 
+            && (i+1 > row || j+2 > colum) 
+            && (i-1 < 1 || j+2 > colum) 
+            && (i-2 < 1 || j+1 > colum)
+            && (i-2 < 1 || j-1 < 1)
+            && (i-1 < 1 || j-2 < 1) 
+            && (i+1 > row || j-2 < 1) 
+            && (i+2 > row || j-1 < 1)) {
+
+                cout << i << " " << j << "\n";
+                return;
+            }
+        }
+    }
+
+    cout << row << " " << colum << "\n";
+}
+
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
@@ -17,34 +42,8 @@ int main() {
     for(int i = 0; i < tests; i++) {
 
         cin >> row >> colum;
-
-        if(row >= 3 && colum >= 4) {
-            cout <<  row << " " << colum << "\n";
-        }
-        else if(row < 2 || colum < 2){
-
-            cout << 1 << " " << 1 << "\n";
-
-        } else if(row < 3 && colum < 3) {
-
-            cout << 1 << " " << 1 << "\n";
-
-        } else if(row == 3 && colum == 3) {
-
-            cout << 2 << " " << 2 << "\n";
-
-        }
-        else if(row == 2 && colum == 3) {
-
-            cout << 1 << " " << 2 << "\n";
-        }
-        else if(row == 3 && colum == 2) {
-
-            cout << 2 << " " << 1 << "\n";
-        }
-        
+        checkIfTrapped(row, colum);    
     }
-
 
     return 0;
 }
