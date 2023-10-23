@@ -1,14 +1,21 @@
 #include <bits/stdc++.h>
 #include <iostream>
 
+using namespace std;
+using ll = long long;  
+using ld = long double;
+
 int isIn(std::string definitions[][2], int anzDef, std::string conversion[4], double factor[]);
 
 //  need recursive function that looks if a is somewhere on the right side (a->b, c->a)
-//  and if so adds rule that points to right side of a (c->b)
+//  and if so adds rule that points to right side of a (c->b) and rekursivly for the added rule
 //  and looks if b is in some other rule on the left (a->b, b->c) sind and if so a->c
 //  multiplay the factors
 
 int main() {
+    ios_base::sync_with_stdio(false); 
+    cin.tie(0); 
+    cout.tie(0);
 
     int definitionsAnz, conversionsAnz;
     double key, value;
@@ -107,4 +114,8 @@ int isIn(std::string definitions[][2], int anzDef, std::string conversion[3], do
     }
 
     return -1;
+}
+
+signed main() {
+
 }
