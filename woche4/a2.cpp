@@ -17,11 +17,9 @@ void run() {
     for(int i = 0; i < n; i++) {
 
         cin >> input[i];
-        // outPutIndex[i] = -1;
-        // tmpOutPutIndex[i] = -1;
     }
 
-    ll curIndex = 0;
+    ll res = 0;
 
     for(int i = 0; i < n; i++) {
 
