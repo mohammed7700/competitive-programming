@@ -4,6 +4,8 @@ using namespace std;
 
 using ll = long long;
 
+int is_odd(int x) { return x & 1; }
+
 void run() {
         //red n * 2
         //blue n - 1
@@ -14,13 +16,17 @@ void run() {
         cout << n-m;return;
     }
 
-    while(n < ceil(m/2)){n *=2;count++;}
+    if(is_odd(m)){
+        m+=1;n+=1;
+    }
+
+    while(n < m/2){n *=2;count++;}
 
     //while(n != m){n--;count++;}
 
-    if( (n - ceil(m/2) ) < (n*2 - m ) ){ 
+    if( (n - m/2 ) < (n*2 - m ) ){ 
 
-        while(ceil(m/2) != n){n--;count++;}
+        while(m/2 != n){n--;count++;}
         count++;
     } else {
         count += n*2-m+1;
