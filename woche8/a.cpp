@@ -8,21 +8,22 @@ void run() {
     
     int h1, h2, climb, fall;
     cin >> h1 >> h2 >> climb >> fall;
-    int days=1;
+    int days=0;
 
-    if( (climb*8) >= (h2-h1) ) {cout<<0;return;}
+    // if( (climb*8) >= (h2-h1) ) {cout<<0;return;}
 
-    if(fall >= climb) {cout<<-1;return;}
+    if(fall >= climb && (climb*8) < (h2-h1)) {cout<<-1;return;}
 
-    h1 += climb*8-fall*12;
+    // h1 += climb*8-fall*12;
 
-    for(int i = h1; i <= h2; i++) {
+    for(int i = h1; i < h2; i-=fall*12-climb*4) {
 
-        if(i+climb*12 >= h2){
+        i += climb*8;
+
+        if(i >= h2){
             cout<<days;return;
         }
-
-        i += (climb-fall)*12;
+        // i += (climb-fall)*12;
         days++;
     }
 
