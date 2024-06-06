@@ -23,15 +23,20 @@ void run() {
     vector<int> prefixsufix = prefix_function(s);
     //cout << s.length() << " " << prefixsufix[s.length()-1];
 
+    if(s.length() < 3) {
+        cout << "Just a legend";
+        return;
+    }
+
     /*for (int i = 0; i < s.length(); i++)
     {
         cout << prefixsufix[i] << " ";
-    }*/
+    }
     
     if(prefixsufix[s.length()-1] == 0) {
         cout << "Just a legend";
         return;
-    }
+    }*/
 
     for (int i = 0; i < s.length()-1; i++)
     {
